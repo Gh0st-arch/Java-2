@@ -74,13 +74,11 @@ Java实验3仓库
 		 this.time = time;
 		 this.teacher = teacher;
   	}
-   ```
 2.```
    Teacher(int number, String name,String sex) //老师的构造方法
 	{
 		super(number,name,sex);//老师继承父类人员的属性，直接用super实例化子类
 	}
-  ```
 3.```
   Student (int number,String name,String sex,String choose_course,int Password)//学生类构造方法
 	{
@@ -88,7 +86,6 @@ Java实验3仓库
 		this.choose_course = choose_course;//学生不同于父类的特殊属性——选择课程，用以记录学生选择的哪个课程，构造时为“未选择”
 		this.Password = Password;//学生不同于父类的特殊属性——密码，只有输入正确的密码才能找到对应的那个学生
 	}
-  ```
 4.```
   void showsy()//ProgramSy里的showsy()函数用以展示列表以提供学生选择
 	{
@@ -98,7 +95,6 @@ Java实验3仓库
 		System.out.println("输入0退出程序");
 		System.out.println("Please input your choose:");
 	}
-  ```
  5.```
     while(true)//对于一个密码对应一个学生的判定方式
 			{
@@ -123,14 +119,12 @@ Java实验3仓库
 					System.out.println("没有学生对应该密码，请输入你自己的密码！");//若密码输入错误，没有一个对应的学生，则提示错误，并返回重新输入
 				}
 			}
-   ```
 6.```
   public String toString()// Course类里的toString()方法输出，其余类同Course
 	{
 		return "编号:"+number+" 课程名称:"+name+" 上课地点:"+place+" 上课时间:"+time+" 老师:"+teacher.name;
 	}
 
-  ```
 ## 系统运行截图
 
 ## 编程感想
