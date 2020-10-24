@@ -138,5 +138,5 @@ Java实验3仓库
 ```
 
 ## 系统运行截图
-
+![result](https://github.com/Gh0st-arch/Java-2/blob/main/img/QQ%E6%88%AA%E5%9B%BE20201024160116.png)
 ## 编程感想
