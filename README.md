@@ -46,9 +46,9 @@ Java实验3仓库
    
    然后程序的最开始将会接收学生的密码，密码对应了不同的学生，只有输入正确的密码才能登入自己的选课系统，如果密码没有任何一个与之对应的学生，那么将会提示学生输入正确的密码，并且直到输入正确为止。
    
-   密码输入后会显示欢迎界面由ProgramSy里的show()来完成(部分代码会再核心代码处展示)。
+   密码输入后会显示欢迎界面由ProgramSy里的showsy()来完成(部分代码会再核心代码处展示)。
    
-   show()显示出以下列表给学生提供选择(这里以其中之一的学生name为道哥的为例):
+   showsy()显示出以下列表给学生提供选择(这里以其中之一的学生name为道哥的为例):
    ```
    您的状态: 未选课
    ①显示老师列表
@@ -57,8 +57,80 @@ Java实验3仓库
    输入0退出程序
    ```
    学生可以先查看老师列表，会显示老师的一些信息，然后查看课程列表，显示每个课程的信息（包括这个课程是哪个老师教），然后选择3选项来选择课程。
+   
    选择课程后，将会显示学生现在选择课程的状态。
+   
    然后会进入退课阶段，如果学生想要退课，则直接输入“退课”即可（这里的if判定要用equals来完成，因为“退课”是String型而不是int型），如果不想退课可以直接按回车跳过该过程，然后程序结束。
  ## 流程图
  
- ## 
+ ## 核心代码
+
+1.```
+  Course(String name,int number,String place,String time,Teacher teacher)  //课程构造方法
+	 {
+		 this.name = name;
+		 this.number = number;
+		 this.place = place;
+		 this.time = time;
+		 this.teacher = teacher;
+  	}
+   ```
+2.```
+   Teacher(int number, String name,String sex) //老师的构造方法
+	{
+		super(number,name,sex);//老师继承父类人员的属性，直接用super实例化子类
+	}
+  ```
+3.```
+  Student (int number,String name,String sex,String choose_course,int Password)//学生类构造方法
+	{
+		super(number,name,sex);//用super来实例化子类的number name sex
+		this.choose_course = choose_course;//学生不同于父类的特殊属性——选择课程，用以记录学生选择的哪个课程，构造时为“未选择”
+		this.Password = Password;//学生不同于父类的特殊属性——密码，只有输入正确的密码才能找到对应的那个学生
+	}
+  ```
+4.```
+  void showsy()//ProgramSy里的showsy()函数用以展示列表以提供学生选择
+	{
+		System.out.println("①显示老师列表");
+		System.out.println("②显示课程列表");
+		System.out.println("③选择课程");
+		System.out.println("输入0退出程序");
+		System.out.println("Please input your choose:");
+	}
+  ```
+ 5.```
+    while(true)//对于一个密码对应一个学生的判定方式
+			{
+				pg.inputPassword = reader.nextInt();
+				
+				if(pg.inputPassword == student1.Password)//如果输入密码等于学生1的密码则显示学生1的信息
+				{
+					System.out.println("Password right!System loading......");
+					System.out.println(">>>>>>欢迎-"+student1.name+"-来到学生选课系统<<<<<<");
+					System.out.println("您的状态: "+student1.choose_course);
+					break;
+				}
+				if(pg.inputPassword == student2.Password)//同上
+				{
+					System.out.println("Password right!System loading......");
+					System.out.println(">>>>>>欢迎-"+student2.name+"-来到学生选课系统<<<<<<");
+					System.out.println("您的状态: "+student2.choose_course);
+					break;
+				}
+				else
+				{
+					System.out.println("没有学生对应该密码，请输入你自己的密码！");//若密码输入错误，没有一个对应的学生，则提示错误，并返回重新输入
+				}
+			}
+   ```
+6.```
+  public String toString()// Course类里的toString()方法输出，其余类同Course
+	{
+		return "编号:"+number+" 课程名称:"+name+" 上课地点:"+place+" 上课时间:"+time+" 老师:"+teacher.name;
+	}
+
+  ```
+## 系统运行截图
+
+## 编程感想
