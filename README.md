@@ -62,7 +62,7 @@ Java实验3仓库
    
    然后会进入退课阶段，如果学生想要退课，则直接输入“退课”即可（这里的if判定要用equals来完成，因为“退课”是String型而不是int型），如果不想退课可以直接按回车跳过该过程，然后程序结束。
  ## 流程图
- 
+ ![result](https://github.com/Gh0st-arch/Java-2/blob/main/img/1.jpg)
  ## 核心代码
 
 1.
